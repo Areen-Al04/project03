@@ -1,9 +1,19 @@
 const title = document.getElementById("title");
-const paragraph = document.querySelector(".text");
-title.textContent = "Hello, DOM!";
-paragraph.textContent = "I changed this text with JavaScript!";
+const text = document.querySelector(".text");
+const button = document.querySelector("#changeButton");
+const box = document.getElementById("box");
+const status = document.querySelector(".status");
 
-title.style.color = "blue";
-title.style.fontSize = "40px";
-
-paragraph.classList.add("active");
+button.addEventListener("click", function () {
+  title.textContent = "Updated Title";
+  text.textContent = "The DOM has been changed!";
+  
+  if (status) {
+    status.textContent = "Status: Active";
+  }
+  
+  if (box) {
+    box.style.padding = "30px";
+    box.classList.add("active");
+  }
+});
